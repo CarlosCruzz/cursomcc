@@ -22,6 +22,8 @@ public class Cidade implements Serializable {
 	@JoinColumn(name = "estado_id")
 	private Estado estado;
 	
+	
+	
 	public Cidade () {
 		
 	}
@@ -81,4 +83,6 @@ public class Cidade implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 }
