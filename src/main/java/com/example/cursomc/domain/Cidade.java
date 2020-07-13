@@ -19,16 +19,21 @@ public class Cidade implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	
+
 	@JsonManagedReference
 	@ManyToOne
-	@JoinColumn(name="estado_id")
+	@JoinColumn(name = "estado_id")
 	private Estado estado;
-	
-	
-	
-	public Cidade () {
-		
+
+	public Cidade() {
+
+	}
+
+	public Cidade(Integer id, String nome, Estado estado) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.estado = estado;
 	}
 
 	public Integer getId() {
@@ -52,13 +57,6 @@ public class Cidade implements Serializable {
 	}
 
 	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
-
-	public Cidade(Integer id, String nome, Estado estado) {
-		super();
-		this.id = id;
-		this.nome = nome;
 		this.estado = estado;
 	}
 
@@ -88,4 +86,5 @@ public class Cidade implements Serializable {
 	}
 
 	
+
 }
